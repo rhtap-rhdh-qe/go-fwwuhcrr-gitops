@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-fwwuhcrr-gitops
+  description: This is GitOps manifest for go-fwwuhcrr   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-fwwuhcrr
+    backstage.io/kubernetes-id: go-fwwuhcrr 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-fwwuhcrr
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-fwwuhcrr
